@@ -4,7 +4,7 @@
 # compile CXX with /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++
 CXX_DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB
 
-CXX_INCLUDES = -I/Users/ryanlacey/Documents/GitHub/echoes_backend/third_party/asio/include -I/Users/ryanlacey/Documents/GitHub/echoes_backend/third_party/crow -isystem /usr/local/include
+CXX_INCLUDES = -I/Users/ryanlacey/Documents/GitHub/echoes_backend2/third_party/asio/include -I/Users/ryanlacey/Documents/GitHub/echoes_backend2/third_party/crow -isystem /usr/local/include
 
 CXX_FLAGS = -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
 

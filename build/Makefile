@@ -57,10 +57,10 @@ RM = /usr/local/Cellar/cmake/3.30.4/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ryanlacey/Documents/GitHub/echoes_backend
+CMAKE_SOURCE_DIR = /Users/ryanlacey/Documents/GitHub/echoes_backend2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ryanlacey/Documents/GitHub/echoes_backend/build
+CMAKE_BINARY_DIR = /Users/ryanlacey/Documents/GitHub/echoes_backend2/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ryanlacey/Documents/GitHub/echoes_backend/build/CMakeFiles /Users/ryanlacey/Documents/GitHub/echoes_backend/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ryanlacey/Documents/GitHub/echoes_backend2/build/CMakeFiles /Users/ryanlacey/Documents/GitHub/echoes_backend2/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ryanlacey/Documents/GitHub/echoes_backend/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ryanlacey/Documents/GitHub/echoes_backend2/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
