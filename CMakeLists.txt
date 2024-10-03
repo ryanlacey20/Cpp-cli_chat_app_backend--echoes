@@ -5,6 +5,8 @@ project(ECHOES_BACKEND)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+find_package(boost_beast REQUIRED CONFIG)
+
 
 
 # Find and include Boost
@@ -26,6 +28,7 @@ target_link_libraries(ECHOES_BACKEND
     PRIVATE
     Boost::system
     Boost::filesystem
+    Boost::beast
 )
 
 # Include directories for asio (added stand alone outside of boost)
