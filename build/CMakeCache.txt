@@ -216,6 +216,9 @@ CMAKE_TAPI:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeD
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Path to a library.
+DEBUG_LIB_FILE_NAME:FILEPATH=DEBUG_LIB_FILE_NAME-NOTFOUND
+
 //Value Computed by CMake
 ECHOES_BACKEND_BINARY_DIR:STATIC=/Users/ryanlacey/Documents/GitHub/echoes_backend2/build
 
@@ -224,6 +227,9 @@ ECHOES_BACKEND_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 ECHOES_BACKEND_SOURCE_DIR:STATIC=/Users/ryanlacey/Documents/GitHub/echoes_backend2
+
+//Path to a library.
+RELEASE_LIB_FILE_NAME:FILEPATH=RELEASE_LIB_FILE_NAME-NOTFOUND
 
 //The directory containing a CMake configuration file for boost_atomic.
 boost_atomic_DIR:PATH=/usr/local/lib/cmake/boost_atomic-1.86.0

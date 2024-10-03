@@ -129,6 +129,30 @@ ECHOES_BACKEND/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ECHOES_BACKEND.dir/build.make CMakeFiles/ECHOES_BACKEND.dir/build
 .PHONY : ECHOES_BACKEND/fast
 
+src/database.o: src/database.cpp.o
+.PHONY : src/database.o
+
+# target to build an object file
+src/database.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ECHOES_BACKEND.dir/build.make CMakeFiles/ECHOES_BACKEND.dir/src/database.cpp.o
+.PHONY : src/database.cpp.o
+
+src/database.i: src/database.cpp.i
+.PHONY : src/database.i
+
+# target to preprocess a source file
+src/database.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ECHOES_BACKEND.dir/build.make CMakeFiles/ECHOES_BACKEND.dir/src/database.cpp.i
+.PHONY : src/database.cpp.i
+
+src/database.s: src/database.cpp.s
+.PHONY : src/database.s
+
+# target to generate assembly for a file
+src/database.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ECHOES_BACKEND.dir/build.make CMakeFiles/ECHOES_BACKEND.dir/src/database.cpp.s
+.PHONY : src/database.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ECHOES_BACKEND"
+	@echo "... src/database.o"
+	@echo "... src/database.i"
+	@echo "... src/database.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
