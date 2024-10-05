@@ -1,62 +1,76 @@
 #include <iostream>
-#include "crow_all.h"
-#include <boost/beast/core.hpp>
-#include <boost/beast/http.hpp>
-#include <boost/asio/connect.hpp>
-#include <boost/asio/ip/tcp.hpp>
+#include <sql.h>
+#include <sqlext.h>
 
-namespace beast = boost::beast;
-namespace http = beast::http;
-namespace net = boost::asio;
-using tcp = net::ip::tcp;
-
-void queryEndpoint(const std::string &host, const std::string &target)
+void checkError(SQLRETURN ret, SQLHANDLE handle, SQLSMALLINT type)
 {
-    try
+    if (ret != SQL_SUCCESS && ret != SQL_SUCCESS_WITH_INFO)
     {
-        net::io_context ioc;
-
-        tcp::resolver resolver(ioc);
-        tcp::socket socket(ioc);
-
-        auto const results = resolver.resolve(host, "http");
-
-        // Connect to server
-        net::connect(socket, results.begin(), results.end());
-
-        // Create request
-        http::request<http::string_body> req{http::verb::get, target, 11};
-        req.set(http::field::host, host);
-        req.set(http::field::user_agent, BOOST_BEAST_VERSION_STRING);
-
-        // Send request
-        http::write(socket, req);
-
-        // receive response
-        beast::flat_buffer buffer;
-        http::response<http::string_body> res;
-
-        http::read(socket, buffer, res);
-
-        // Print the response
-        std::cout << res << std::endl;
-    }
-    catch (const std::exception &e)
-    {
-        std::cerr << "Error: " << e.what() << std::endl;
+        SQLCHAR message[256];
+        SQLGetDiagRec(type, handle, 1, NULL, NULL, message, sizeof(message), NULL);
+        std::cerr << "ODBC Error: " << message << std::endl;
     }
 }
 
 int main()
 {
+    SQLHENV env;
+    SQLHDBC dbc;
+    SQLHSTMT stmt;
+    SQLRETURN ret;
 
-    crow::SimpleApp app;
+    // Initialize the ENV
+    SQLAllocHandle(SQL_HANDLE_ENV, SQL_NULL_HANDLE, &env);
+    SQLSetEnvAttr(env, SQL_ATTR_ODBC_VERSION, (void *)SQL_OV_ODBC3, 0);
+    SQLAllocHandle(SQL_HANDLE_DBC, env, &dbc);
 
-    // define your endpoint at the root directory
-    CROW_ROUTE(app, "/")
-    ([]()
-     { return "Hello world"; });
+    // Connect to DB
+    ret = SQLDriverConnect(dbc, NULL,
+                           (SQLCHAR *)"Driver={ODBC Driver 18 for SQL Server};Server=tcp:ryantadhg-server.database.windows.net,1433;"
+                                      "Database=echoes;Uid=ryantadhg;Pwd=Meetmeafterthetogaparty!;Encrypt=yes;TrustServerCertificate=no;",
+                           SQL_NTS, NULL, 0, NULL, SQL_DRIVER_NOPROMPT);
+    checkError(ret, dbc, SQL_HANDLE_DBC);
 
-    // set the port, set the app to run on multiple threads, and run the app
-    app.port(18080).multithreaded().run();
+    if (ret == SQL_SUCCESS || ret == SQL_SUCCESS_WITH_INFO)
+    {
+        std::cout << "Connected to the database.\n";
+
+        // Allocate statement handle
+        SQLAllocHandle(SQL_HANDLE_STMT, dbc, &stmt);
+        ret = SQLExecDirect(stmt, (SQLCHAR *)"SELECT * FROM messages", SQL_NTS);
+        checkError(ret, stmt, SQL_HANDLE_STMT);
+
+        // Get and print column headers (column names)
+        SQLSMALLINT numCols;
+        SQLNumResultCols(stmt, &numCols); // Get the number of columns in the result set
+        for (SQLUSMALLINT i = 1; i <= numCols; i++)
+        {
+            SQLCHAR colName[128];
+            SQLSMALLINT nameLen;
+            SQLDescribeCol(stmt, i, colName, sizeof(colName), &nameLen, NULL, NULL, NULL, NULL);
+            std::cout << colName << "\t"; // Print column name
+        }
+        std::cout << std::endl;
+
+        // Fetch and print all rows
+        SQLCHAR colData[256];
+        while (SQLFetch(stmt) == SQL_SUCCESS)
+        {
+            for (SQLUSMALLINT i = 1; i <= numCols; i++)
+            {
+                SQLGetData(stmt, i, SQL_C_CHAR, colData, sizeof(colData), NULL);
+                std::cout << colData << "\t"; // Print column data
+            }
+            std::cout << std::endl;
+        }
+
+        // Clean up
+        SQLFreeHandle(SQL_HANDLE_STMT, stmt);
+    }
+
+    SQLDisconnect(dbc);
+    SQLFreeHandle(SQL_HANDLE_DBC, dbc);
+    SQLFreeHandle(SQL_HANDLE_ENV, env);
+
+    return 0;
 }
