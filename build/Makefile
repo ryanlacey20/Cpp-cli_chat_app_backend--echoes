@@ -129,6 +129,30 @@ ECHOES_BACKEND/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ECHOES_BACKEND.dir/build.make CMakeFiles/ECHOES_BACKEND.dir/build
 .PHONY : ECHOES_BACKEND/fast
 
+src/dbConnection.o: src/dbConnection.cpp.o
+.PHONY : src/dbConnection.o
+
+# target to build an object file
+src/dbConnection.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ECHOES_BACKEND.dir/build.make CMakeFiles/ECHOES_BACKEND.dir/src/dbConnection.cpp.o
+.PHONY : src/dbConnection.cpp.o
+
+src/dbConnection.i: src/dbConnection.cpp.i
+.PHONY : src/dbConnection.i
+
+# target to preprocess a source file
+src/dbConnection.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ECHOES_BACKEND.dir/build.make CMakeFiles/ECHOES_BACKEND.dir/src/dbConnection.cpp.i
+.PHONY : src/dbConnection.cpp.i
+
+src/dbConnection.s: src/dbConnection.cpp.s
+.PHONY : src/dbConnection.s
+
+# target to generate assembly for a file
+src/dbConnection.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ECHOES_BACKEND.dir/build.make CMakeFiles/ECHOES_BACKEND.dir/src/dbConnection.cpp.s
+.PHONY : src/dbConnection.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -186,6 +210,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ECHOES_BACKEND"
+	@echo "... src/dbConnection.o"
+	@echo "... src/dbConnection.i"
+	@echo "... src/dbConnection.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

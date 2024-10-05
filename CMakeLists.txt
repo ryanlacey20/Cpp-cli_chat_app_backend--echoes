@@ -16,7 +16,7 @@ find_package(Boost REQUIRED COMPONENTS system filesystem)
 
 
 # Define the executable
-add_executable(ECHOES_BACKEND src/main.cpp src/server.cpp)
+add_executable(ECHOES_BACKEND src/main.cpp src/server.cpp src/dbConnection.cpp)
 
 target_link_libraries(ECHOES_BACKEND
     PRIVATE

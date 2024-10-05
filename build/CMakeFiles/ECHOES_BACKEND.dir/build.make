@@ -97,28 +97,44 @@ CMakeFiles/ECHOES_BACKEND.dir/src/server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ECHOES_BACKEND.dir/src/server.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/src/server.cpp -o CMakeFiles/ECHOES_BACKEND.dir/src/server.cpp.s
 
+CMakeFiles/ECHOES_BACKEND.dir/src/dbConnection.cpp.o: CMakeFiles/ECHOES_BACKEND.dir/flags.make
+CMakeFiles/ECHOES_BACKEND.dir/src/dbConnection.cpp.o: /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/src/dbConnection.cpp
+CMakeFiles/ECHOES_BACKEND.dir/src/dbConnection.cpp.o: CMakeFiles/ECHOES_BACKEND.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ECHOES_BACKEND.dir/src/dbConnection.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ECHOES_BACKEND.dir/src/dbConnection.cpp.o -MF CMakeFiles/ECHOES_BACKEND.dir/src/dbConnection.cpp.o.d -o CMakeFiles/ECHOES_BACKEND.dir/src/dbConnection.cpp.o -c /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/src/dbConnection.cpp
+
+CMakeFiles/ECHOES_BACKEND.dir/src/dbConnection.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ECHOES_BACKEND.dir/src/dbConnection.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/src/dbConnection.cpp > CMakeFiles/ECHOES_BACKEND.dir/src/dbConnection.cpp.i
+
+CMakeFiles/ECHOES_BACKEND.dir/src/dbConnection.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ECHOES_BACKEND.dir/src/dbConnection.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/src/dbConnection.cpp -o CMakeFiles/ECHOES_BACKEND.dir/src/dbConnection.cpp.s
+
 # Object files for target ECHOES_BACKEND
 ECHOES_BACKEND_OBJECTS = \
 "CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.o" \
-"CMakeFiles/ECHOES_BACKEND.dir/src/server.cpp.o"
+"CMakeFiles/ECHOES_BACKEND.dir/src/server.cpp.o" \
+"CMakeFiles/ECHOES_BACKEND.dir/src/dbConnection.cpp.o"
 
 # External object files for target ECHOES_BACKEND
 ECHOES_BACKEND_EXTERNAL_OBJECTS =
 
-$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)ECHOES_BACKEND: CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.o
-$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)ECHOES_BACKEND: CMakeFiles/ECHOES_BACKEND.dir/src/server.cpp.o
-$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)ECHOES_BACKEND: CMakeFiles/ECHOES_BACKEND.dir/build.make
-$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)ECHOES_BACKEND: /usr/local/lib/libboost_system-mt.dylib
-$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)ECHOES_BACKEND: /usr/local/lib/libboost_filesystem-mt.dylib
-$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)ECHOES_BACKEND: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurl.tbd
-$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)ECHOES_BACKEND: /usr/local/lib/libodbc.dylib
-$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)ECHOES_BACKEND: /usr/local/lib/libboost_atomic-mt.dylib
-$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)ECHOES_BACKEND: CMakeFiles/ECHOES_BACKEND.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ======ECHOES_BACKEND"
+ECHOES_BACKEND: CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.o
+ECHOES_BACKEND: CMakeFiles/ECHOES_BACKEND.dir/src/server.cpp.o
+ECHOES_BACKEND: CMakeFiles/ECHOES_BACKEND.dir/src/dbConnection.cpp.o
+ECHOES_BACKEND: CMakeFiles/ECHOES_BACKEND.dir/build.make
+ECHOES_BACKEND: /usr/local/lib/libboost_system-mt.dylib
+ECHOES_BACKEND: /usr/local/lib/libboost_filesystem-mt.dylib
+ECHOES_BACKEND: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurl.tbd
+ECHOES_BACKEND: /usr/local/lib/libodbc.dylib
+ECHOES_BACKEND: /usr/local/lib/libboost_atomic-mt.dylib
+ECHOES_BACKEND: CMakeFiles/ECHOES_BACKEND.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ECHOES_BACKEND"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ECHOES_BACKEND.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/ECHOES_BACKEND.dir/build: $(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)$(EQUALS)ECHOES_BACKEND
+CMakeFiles/ECHOES_BACKEND.dir/build: ECHOES_BACKEND
 .PHONY : CMakeFiles/ECHOES_BACKEND.dir/build
 
 CMakeFiles/ECHOES_BACKEND.dir/clean:

@@ -14,20 +14,8 @@
 # EXTERNAL cache entries
 ########################
 
-:UNINITIALIZED=======
-
-//The directory containing a CMake configuration file for Asio.
-Asio_DIR:PATH=Asio_DIR-NOTFOUND
-
 //The directory containing a CMake configuration file for Boost.
 Boost_DIR:PATH=/usr/local/lib/cmake/Boost-1.86.0
-
-Boost_FILESYSTEM_LIBRARY_RELEASE:STRING=/usr/local/lib/libboost_filesystem-mt.dylib
-
-//Path to a file.
-Boost_INCLUDE_DIR:PATH=/usr/local/include
-
-Boost_SYSTEM_LIBRARY_RELEASE:STRING=/usr/local/lib/libboost_system-mt.dylib
 
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=CMAKE_ADDR2LINE-NOTFOUND
@@ -222,9 +210,6 @@ CMAKE_STRIP:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/Xcode
 //Path to a program.
 CMAKE_TAPI:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/tapi
 
-//Vcpkg toolchain file
-CMAKE_TOOLCHAIN_FILE:STRING=/path/to/vcpkg/scripts/buildsystems/vcpkg.cmake
-
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
 // during the make.  This is useful for debugging only. With Visual
@@ -242,9 +227,6 @@ CURL_LIBRARY_DEBUG:FILEPATH=CURL_LIBRARY_DEBUG-NOTFOUND
 
 //Path to a library.
 CURL_LIBRARY_RELEASE:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurl.tbd
-
-//The directory containing a CMake configuration file for Crow.
-Crow_DIR:PATH=Crow_DIR-NOTFOUND
 
 //Value Computed by CMake
 ECHOES_BACKEND_BINARY_DIR:STATIC=/Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/build
@@ -270,14 +252,8 @@ PKG_CONFIG_ARGN:STRING=
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/local/bin/pkg-config
 
-//The directory containing a CMake configuration file for asio.
-asio_DIR:PATH=asio_DIR-NOTFOUND
-
 //The directory containing a CMake configuration file for boost_atomic.
 boost_atomic_DIR:PATH=/usr/local/lib/cmake/boost_atomic-1.86.0
-
-//The directory containing a CMake configuration file for boost_beast.
-boost_beast_DIR:PATH=boost_beast_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for boost_filesystem.
 boost_filesystem_DIR:PATH=/usr/local/lib/cmake/boost_filesystem-1.86.0
@@ -296,8 +272,6 @@ pkgcfg_lib_PC_CURL_curl:FILEPATH=/Applications/Xcode.app/Contents/Developer/Plat
 # INTERNAL cache entries
 ########################
 
-//ADVANCED property for variable: Boost_DIR
-Boost_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -445,12 +419,10 @@ CURL_INCLUDE_DIR-ADVANCED:INTERNAL=1
 CURL_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CURL_LIBRARY_RELEASE
 CURL_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//Details about finding Boost
-FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/local/lib/cmake/Boost-1.86.0/BoostConfig.cmake][cfound components: system filesystem ][v1.86.0()]
 //Details about finding CURL
 FIND_PACKAGE_MESSAGE_DETAILS_CURL:INTERNAL=[/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurl.tbd][/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include][c ][v8.4.0()]
 //Details about finding ODBC
-FIND_PACKAGE_MESSAGE_DETAILS_ODBC:INTERNAL=[/usr/local/lib/libodbc.dylib][/Library/Frameworks/iODBC.framework/Headers][v======()]
+FIND_PACKAGE_MESSAGE_DETAILS_ODBC:INTERNAL=[/usr/local/lib/libodbc.dylib][/Library/Frameworks/iODBC.framework/Headers][v()]
 //ADVANCED property for variable: ODBC_CONFIG
 ODBC_CONFIG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ODBC_INCLUDE_DIR
