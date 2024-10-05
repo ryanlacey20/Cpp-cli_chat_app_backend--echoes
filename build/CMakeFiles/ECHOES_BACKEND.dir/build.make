@@ -53,10 +53,10 @@ RM = /usr/local/Cellar/cmake/3.30.4/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ryanlacey/Documents/GitHub/echoes_backend2
+CMAKE_SOURCE_DIR = /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ryanlacey/Documents/GitHub/echoes_backend2/build
+CMAKE_BINARY_DIR = /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ECHOES_BACKEND.dir/depend.make
@@ -70,18 +70,18 @@ include CMakeFiles/ECHOES_BACKEND.dir/progress.make
 include CMakeFiles/ECHOES_BACKEND.dir/flags.make
 
 CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.o: CMakeFiles/ECHOES_BACKEND.dir/flags.make
-CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.o: /Users/ryanlacey/Documents/GitHub/echoes_backend2/src/main.cpp
+CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.o: /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/src/main.cpp
 CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.o: CMakeFiles/ECHOES_BACKEND.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ryanlacey/Documents/GitHub/echoes_backend2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.o -MF CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.o.d -o CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.o -c /Users/ryanlacey/Documents/GitHub/echoes_backend2/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.o -MF CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.o.d -o CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.o -c /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/src/main.cpp
 
 CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ryanlacey/Documents/GitHub/echoes_backend2/src/main.cpp > CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/src/main.cpp > CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.i
 
 CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ryanlacey/Documents/GitHub/echoes_backend2/src/main.cpp -o CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/src/main.cpp -o CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.s
 
 # Object files for target ECHOES_BACKEND
 ECHOES_BACKEND_OBJECTS = \
@@ -94,9 +94,11 @@ ECHOES_BACKEND: CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.o
 ECHOES_BACKEND: CMakeFiles/ECHOES_BACKEND.dir/build.make
 ECHOES_BACKEND: /usr/local/lib/libboost_system-mt.dylib
 ECHOES_BACKEND: /usr/local/lib/libboost_filesystem-mt.dylib
+ECHOES_BACKEND: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurl.tbd
+ECHOES_BACKEND: /usr/local/lib/libodbc.dylib
 ECHOES_BACKEND: /usr/local/lib/libboost_atomic-mt.dylib
 ECHOES_BACKEND: CMakeFiles/ECHOES_BACKEND.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/ryanlacey/Documents/GitHub/echoes_backend2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ECHOES_BACKEND"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ECHOES_BACKEND"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ECHOES_BACKEND.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -108,6 +110,6 @@ CMakeFiles/ECHOES_BACKEND.dir/clean:
 .PHONY : CMakeFiles/ECHOES_BACKEND.dir/clean
 
 CMakeFiles/ECHOES_BACKEND.dir/depend:
-	cd /Users/ryanlacey/Documents/GitHub/echoes_backend2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/ryanlacey/Documents/GitHub/echoes_backend2 /Users/ryanlacey/Documents/GitHub/echoes_backend2 /Users/ryanlacey/Documents/GitHub/echoes_backend2/build /Users/ryanlacey/Documents/GitHub/echoes_backend2/build /Users/ryanlacey/Documents/GitHub/echoes_backend2/build/CMakeFiles/ECHOES_BACKEND.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2 /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2 /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/build /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/build /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/build/CMakeFiles/ECHOES_BACKEND.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/ECHOES_BACKEND.dir/depend
 
