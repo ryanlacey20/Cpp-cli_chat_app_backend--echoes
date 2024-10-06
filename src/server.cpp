@@ -1,3 +1,4 @@
+#include <iostream>
 #include "crow_all.h"
 #include "dbConnection.h"
 
@@ -10,9 +11,9 @@ int startServer()
     CROW_ROUTE(app, "/getMessages")
     ([](const crow::request &req)
      {
-        Database db;
-        
-        return  db.executeQuery("SELECT * FROM messages ORDER BY created_at"); });
+
+        std::cout << "hello"; 
+        return "Request complete, logged to console"; });
 
     app.port(18080).multithreaded().run();
 

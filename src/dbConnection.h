@@ -3,23 +3,25 @@
 
 #include <sql.h>
 #include <sqlext.h>
-#include <iostream>
-#include <cstdlib>
+#include <string>
+#include <vector>
 
 class Database
 {
 public:
-    Database();  // Obj Constructor
-    ~Database(); // Obj Destructor
+    SQLHENV env; // Environment handle
+    SQLHDBC dbc; // Connection handle
 
-    std::vector<std::vector<std::string>> executeQuery(const std::string &query); // Function to execute an SQL query
-    void printResults();
+    Database();  // Constructor to establish connection
+    ~Database(); // Destructor to close connection
+
+    void executeQuery(const std::string &query); // Function to execute query and return results
+    void printResults(SQLHSTMT stmt);
 
 private:
-    SQLHENV env;                // Environment handle
-    SQLHDBC dbc;                // Database connection handle
-    void establishConnection(); // Function to establish a connection
-    void closeConnection();     // Function to close the connection
+    void checkError(SQLRETURN ret, SQLHANDLE handle, SQLSMALLINT type); // Error handling function
+    void establishConnection();                                         // Establish connection to the database
+    void closeConnection();                                             // Close the connection to the database
 };
 
-#endif
+#endif // DBCONNECTION_H

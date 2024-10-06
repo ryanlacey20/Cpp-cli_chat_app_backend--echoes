@@ -6,7 +6,7 @@
 
 int main()
 {
-    establishConnection();
+    Database db;
     startServer();
 
     return 0;
