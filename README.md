@@ -1,2 +1,2 @@
 # echoes_backend
-A C++ server to handle incoming connections and build a bridge between clients and SQL DB. 
+Echoes is a simple CLI chatroom. echoes_backend handles the serverside fucntionality,  using a RESTful API to handle DB connections to a cloud hosted SQL DB on MSAzure.
