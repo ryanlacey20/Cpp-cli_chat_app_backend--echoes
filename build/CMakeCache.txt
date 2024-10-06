@@ -264,6 +264,9 @@ boost_headers_DIR:PATH=/usr/local/lib/cmake/boost_headers-1.86.0
 //The directory containing a CMake configuration file for boost_system.
 boost_system_DIR:PATH=/usr/local/lib/cmake/boost_system-1.86.0
 
+//The directory containing a CMake configuration file for nlohmann_json.
+nlohmann_json_DIR:PATH=/usr/local/share/cmake/nlohmann_json
+
 //Path to a library.
 pkgcfg_lib_PC_CURL_curl:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurl.tbd
 
@@ -423,6 +426,8 @@ CURL_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 FIND_PACKAGE_MESSAGE_DETAILS_CURL:INTERNAL=[/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurl.tbd][/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include][c ][v8.4.0()]
 //Details about finding ODBC
 FIND_PACKAGE_MESSAGE_DETAILS_ODBC:INTERNAL=[/usr/local/lib/libodbc.dylib][/Library/Frameworks/iODBC.framework/Headers][v()]
+//Details about finding nlohmann_json
+FIND_PACKAGE_MESSAGE_DETAILS_nlohmann_json:INTERNAL=[/usr/local/share/cmake/nlohmann_json/nlohmann_jsonConfig.cmake][v3.11.3()]
 //ADVANCED property for variable: ODBC_CONFIG
 ODBC_CONFIG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ODBC_INCLUDE_DIR

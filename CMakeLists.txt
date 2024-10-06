@@ -9,6 +9,7 @@ set(CMAKE_TOOLCHAIN_FILE "/Users/ryanlacey/Downloads/vcpkg/scripts/buildsystems/
 
 find_package(CURL REQUIRED)
 find_package(ODBC REQUIRED)
+find_package(nlohmann_json REQUIRED)
 
 
 # Find and include Boost
@@ -25,6 +26,7 @@ target_link_libraries(ECHOES_BACKEND
     #Boost::beast
     CURL::libcurl
     ODBC::ODBC
+    nlohmann_json::nlohmann_json
 )
 
 # # Include directories for asio (added stand alone outside of boost)

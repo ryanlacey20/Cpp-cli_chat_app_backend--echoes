@@ -5,6 +5,8 @@
 #include <sqlext.h>
 #include <string>
 #include <vector>
+#include <nlohmann/json.hpp>
+using json = nlohmann::json;
 
 class Database
 {
@@ -15,13 +17,13 @@ public:
     Database();  // Constructor to establish connection
     ~Database(); // Destructor to close connection
 
-    void executeQuery(const std::string &query); // Function to execute query and return results
+    json executeQuery(const std::string &query); // Function to execute query and return results (as a jsion)
     void printResults(SQLHSTMT stmt);
 
 private:
     void checkError(SQLRETURN ret, SQLHANDLE handle, SQLSMALLINT type); // Error handling function
     void establishConnection();                                         // Establish connection to the database
-    void closeConnection();                                             // Close the connection to the database
+    void closeConnection();                                             // Close connection to the database
 };
 
 #endif // DBCONNECTION_H

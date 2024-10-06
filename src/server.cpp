@@ -1,19 +1,26 @@
 #include <iostream>
 #include "crow_all.h"
 #include "dbConnection.h"
+#include <sql.h>
+#include <sqlext.h>
+#include <string>
+#include <vector>
+#include <nlohmann/json.hpp>
+
+using json = nlohmann::json;
 
 int startServer()
 {
-    // Create a Crow application
     crow::SimpleApp app;
+    Database dbHandler;
 
-    // Define a simple GET endpoint
     CROW_ROUTE(app, "/getMessages")
-    ([](const crow::request &req)
+    ([&dbHandler](const crow::request &req)
      {
+         json results = dbHandler.executeQuery("SELECT * FROM messages ORDER BY created_at");
 
-        std::cout << "hello"; 
-        return "Request complete, logged to console"; });
+         return crow::response(results.dump()); // .dump is converting to a string, not sure if we need or would be better/possible to just return a json..
+     });
 
     app.port(18080).multithreaded().run();
 
