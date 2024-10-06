@@ -5,20 +5,24 @@
 #include <string>
 #include <vector>
 #include "dbConnection.h"
+#include <nlohmann/json.hpp>
+using json = nlohmann::json;
 
 Database::Database()
 {
     env = SQL_NULL_HENV;
     dbc = SQL_NULL_HDBC;
     establishConnection();
+    std::cout << "DB INSTANCE CREATED \n";
 }
 
 Database::~Database()
 {
+    std::cout << "DB INSTANCE DESTROYED \n";
     closeConnection();
 }
 
-void Database::executeQuery(const std::string &query)
+json Database::executeQuery(const std::string &query) // Change return type to json
 {
     SQLHSTMT stmt;
     SQLRETURN ret;
@@ -27,7 +31,7 @@ void Database::executeQuery(const std::string &query)
     ret = SQLExecDirect(stmt, (SQLCHAR *)query.c_str(), SQL_NTS);
     checkError(ret, stmt, SQL_HANDLE_STMT);
 
-    std::vector<std::vector<std::string>> results;
+    json jsonResponse = json::array(); // Create a JSON array to hold the results
 
     if (ret == SQL_SUCCESS || ret == SQL_SUCCESS_WITH_INFO)
     {
@@ -38,20 +42,27 @@ void Database::executeQuery(const std::string &query)
         SQLCHAR colData[256];
         while (SQLFetch(stmt) == SQL_SUCCESS)
         {
-            std::vector<std::string> row;
+            json jsonRow = json::object(); // Create a new JSON object for the row
+
             for (SQLUSMALLINT i = 1; i <= numCols; i++)
             {
+                SQLCHAR colName[128];
+                SQLSMALLINT nameLen;
+                SQLDescribeCol(stmt, i, colName, sizeof(colName), &nameLen, NULL, NULL, NULL, NULL);
+
+                // Get the column data and add it to the JSON object
                 SQLGetData(stmt, i, SQL_C_CHAR, colData, sizeof(colData), NULL);
-                row.emplace_back((char *)(colData));
+                jsonRow[std::string(reinterpret_cast<char *>(colName), nameLen)] = std::string(reinterpret_cast<char *>(colData)); // Use column name as key
             }
-            results.emplace_back(row); // Append to vector
+
+            jsonResponse.push_back(jsonRow); // Append the JSON row to the JSON array
         }
     }
 
     SQLFreeHandle(SQL_HANDLE_STMT, stmt);
-    // return results; // Return 2d vector
-    std::cout << "this ran";
+    return jsonResponse; // Return the JSON array
 }
+
 void Database::printResults(SQLHSTMT stmt)
 {
     // Get and print column headers
