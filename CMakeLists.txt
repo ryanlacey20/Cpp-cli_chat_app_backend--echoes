@@ -6,11 +6,16 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_PREFIX_PATH "third_party/boost_1_86_0")
 
+if(WIN32)
 
-set(CMAKE_TOOLCHAIN_FILE "/Users/ryanlacey/Downloads/vcpkg/scripts/buildsystems/vcpkg.cmake")
+    set(Boost_DIR "C:/Users/tadhg/OneDrive/Desktop/boost_install/boots-test/boost_1_86_0/stage/lib/cmake/Boost-1.86.0")
+    set(CURL_INCLUDE_DIR "C:/Users/tadhg/OneDrive/Desktop/boost_install/curl/include")
+    set(CURL_LIBRARY "C:/Users/tadhg/OneDrive/Desktop/boost_install/curl/lib/libcurl.a")
+    
+endif()
 
-find_package(CURL REQUIRED)
 find_package(ODBC REQUIRED)
+find_package(CURL REQUIRED)
 
 
 # Find and include Boost
