@@ -7,6 +7,17 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_TOOLCHAIN_FILE "/Users/ryanlacey/Downloads/vcpkg/scripts/buildsystems/vcpkg.cmake")
 
+if(WIN32)
+    set(CMAKE_TOOLCHAIN_FILE "C:/Program Files/vcpkg/scripts/buildsystems/vcpkg.cmake")
+    set(Boost_DIR "C:/Users/tadhg/OneDrive/Desktop/boost_install/boots-test/boost_1_86_0/stage/lib/cmake/Boost-1.86.0")
+    set(CURL_INCLUDE_DIR "C:/Users/tadhg/OneDrive/Desktop/boost_install/curl/include")
+    set(CURL_LIBRARY "C:/Users/tadhg/OneDrive/Desktop/boost_install/curl/lib/libcurl.a")
+    set(nlohmann_json_DIR "C:/Program Files/vcpkg/installed/x64-windows/share/nlohmann_json")
+    #target_include_directories(ECHOES_BACKEND PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/third_party/asio/include)
+    
+endif()
+
+
 find_package(CURL REQUIRED)
 find_package(ODBC REQUIRED)
 find_package(nlohmann_json REQUIRED)
