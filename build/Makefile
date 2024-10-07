@@ -57,10 +57,10 @@ RM = /usr/local/Cellar/cmake/3.30.4/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ryanlacey/Documents/GitHub/echoes_backend2
+CMAKE_SOURCE_DIR = /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ryanlacey/Documents/GitHub/echoes_backend2/build
+CMAKE_BINARY_DIR = /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ryanlacey/Documents/GitHub/echoes_backend2/build/CMakeFiles /Users/ryanlacey/Documents/GitHub/echoes_backend2/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/build/CMakeFiles /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ryanlacey/Documents/GitHub/echoes_backend2/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,6 +129,30 @@ ECHOES_BACKEND/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ECHOES_BACKEND.dir/build.make CMakeFiles/ECHOES_BACKEND.dir/build
 .PHONY : ECHOES_BACKEND/fast
 
+src/dbConnection.o: src/dbConnection.cpp.o
+.PHONY : src/dbConnection.o
+
+# target to build an object file
+src/dbConnection.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ECHOES_BACKEND.dir/build.make CMakeFiles/ECHOES_BACKEND.dir/src/dbConnection.cpp.o
+.PHONY : src/dbConnection.cpp.o
+
+src/dbConnection.i: src/dbConnection.cpp.i
+.PHONY : src/dbConnection.i
+
+# target to preprocess a source file
+src/dbConnection.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ECHOES_BACKEND.dir/build.make CMakeFiles/ECHOES_BACKEND.dir/src/dbConnection.cpp.i
+.PHONY : src/dbConnection.cpp.i
+
+src/dbConnection.s: src/dbConnection.cpp.s
+.PHONY : src/dbConnection.s
+
+# target to generate assembly for a file
+src/dbConnection.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ECHOES_BACKEND.dir/build.make CMakeFiles/ECHOES_BACKEND.dir/src/dbConnection.cpp.s
+.PHONY : src/dbConnection.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -153,6 +177,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ECHOES_BACKEND.dir/build.make CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/server.o: src/server.cpp.o
+.PHONY : src/server.o
+
+# target to build an object file
+src/server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ECHOES_BACKEND.dir/build.make CMakeFiles/ECHOES_BACKEND.dir/src/server.cpp.o
+.PHONY : src/server.cpp.o
+
+src/server.i: src/server.cpp.i
+.PHONY : src/server.i
+
+# target to preprocess a source file
+src/server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ECHOES_BACKEND.dir/build.make CMakeFiles/ECHOES_BACKEND.dir/src/server.cpp.i
+.PHONY : src/server.cpp.i
+
+src/server.s: src/server.cpp.s
+.PHONY : src/server.s
+
+# target to generate assembly for a file
+src/server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ECHOES_BACKEND.dir/build.make CMakeFiles/ECHOES_BACKEND.dir/src/server.cpp.s
+.PHONY : src/server.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,9 +210,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ECHOES_BACKEND"
+	@echo "... src/dbConnection.o"
+	@echo "... src/dbConnection.i"
+	@echo "... src/dbConnection.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/server.o"
+	@echo "... src/server.i"
+	@echo "... src/server.s"
 .PHONY : help
 
 

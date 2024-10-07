@@ -1,5 +1,8 @@
-CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.o: \
-  /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/src/main.cpp \
+CMakeFiles/ECHOES_BACKEND.dir/src/dbConnection.cpp.o: \
+  /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/src/dbConnection.cpp \
+  /usr/local/include/sql.h /usr/local/include/sqltypes.h \
+  /usr/local/include/unixodbc.h /usr/local/include/sqlext.h \
+  /usr/local/include/sqlucode.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/iostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__assert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__config \
@@ -790,7 +793,89 @@ CMakeFiles/ECHOES_BACKEND.dir/src/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/_types/_nl_item.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/cstdarg \
-  /usr/local/include/sql.h /usr/local/include/sqltypes.h \
-  /usr/local/include/unixodbc.h /usr/local/include/sqlext.h \
-  /usr/local/include/sqlucode.h \
-  /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/src/server.h
+  /Users/ryanlacey/Documents/GitHub/tmp/echoes_backend2/src/dbConnection.h \
+  /usr/local/include/nlohmann/json.hpp \
+  /usr/local/include/nlohmann/adl_serializer.hpp \
+  /usr/local/include/nlohmann/detail/abi_macros.hpp \
+  /usr/local/include/nlohmann/detail/conversions/from_json.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/forward_list \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__tree \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/valarray \
+  /usr/local/include/nlohmann/detail/exceptions.hpp \
+  /usr/local/include/nlohmann/detail/value_t.hpp \
+  /usr/local/include/nlohmann/detail/macro_scope.hpp \
+  /usr/local/include/nlohmann/detail/meta/detected.hpp \
+  /usr/local/include/nlohmann/detail/meta/void_t.hpp \
+  /usr/local/include/nlohmann/thirdparty/hedley/hedley.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/cassert \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/assert.h \
+  /usr/local/include/nlohmann/detail/string_escape.hpp \
+  /usr/local/include/nlohmann/detail/input/position_t.hpp \
+  /usr/local/include/nlohmann/detail/meta/cpp_future.hpp \
+  /usr/local/include/nlohmann/detail/meta/type_traits.hpp \
+  /usr/local/include/nlohmann/detail/iterators/iterator_traits.hpp \
+  /usr/local/include/nlohmann/detail/meta/call_std/begin.hpp \
+  /usr/local/include/nlohmann/detail/meta/call_std/end.hpp \
+  /usr/local/include/nlohmann/json_fwd.hpp \
+  /usr/local/include/nlohmann/detail/string_concat.hpp \
+  /usr/local/include/nlohmann/detail/meta/identity_tag.hpp \
+  /usr/local/include/nlohmann/detail/meta/std_fs.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/filesystem \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__filesystem/copy_options.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__filesystem/directory_entry.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__filesystem/file_status.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__filesystem/file_type.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__filesystem/perms.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__filesystem/file_time_type.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__filesystem/filesystem_error.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__filesystem/path.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/iomanip \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__filesystem/operations.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__filesystem/perm_options.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__filesystem/space_info.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__filesystem/directory_iterator.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__filesystem/directory_options.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__filesystem/path_iterator.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__filesystem/u8path.h \
+  /usr/local/include/nlohmann/detail/conversions/to_json.hpp \
+  /usr/local/include/nlohmann/detail/iterators/iteration_proxy.hpp \
+  /usr/local/include/nlohmann/byte_container_with_subtype.hpp \
+  /usr/local/include/nlohmann/detail/hash.hpp \
+  /usr/local/include/nlohmann/detail/input/binary_reader.hpp \
+  /usr/local/include/nlohmann/detail/input/input_adapters.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/numeric \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__numeric/accumulate.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__numeric/adjacent_difference.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__numeric/exclusive_scan.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__numeric/gcd_lcm.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__numeric/inclusive_scan.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__numeric/inner_product.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__numeric/iota.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__numeric/midpoint.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__numeric/partial_sum.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__numeric/reduce.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__numeric/transform_exclusive_scan.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__numeric/transform_inclusive_scan.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__numeric/transform_reduce.h \
+  /usr/local/include/nlohmann/detail/input/json_sax.hpp \
+  /usr/local/include/nlohmann/detail/input/lexer.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/clocale \
+  /usr/local/include/nlohmann/detail/meta/is_sax.hpp \
+  /usr/local/include/nlohmann/detail/input/parser.hpp \
+  /usr/local/include/nlohmann/detail/iterators/internal_iterator.hpp \
+  /usr/local/include/nlohmann/detail/iterators/primitive_iterator.hpp \
+  /usr/local/include/nlohmann/detail/iterators/iter_impl.hpp \
+  /usr/local/include/nlohmann/detail/iterators/json_reverse_iterator.hpp \
+  /usr/local/include/nlohmann/detail/json_custom_base_class.hpp \
+  /usr/local/include/nlohmann/detail/json_pointer.hpp \
+  /usr/local/include/nlohmann/detail/json_ref.hpp \
+  /usr/local/include/nlohmann/detail/output/binary_writer.hpp \
+  /usr/local/include/nlohmann/detail/output/output_adapters.hpp \
+  /usr/local/include/nlohmann/detail/output/serializer.hpp \
+  /usr/local/include/nlohmann/detail/conversions/to_chars.hpp \
+  /usr/local/include/nlohmann/ordered_map.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/any \
+  /usr/local/include/nlohmann/detail/macro_unscope.hpp \
+  /usr/local/include/nlohmann/thirdparty/hedley/hedley_undef.hpp
