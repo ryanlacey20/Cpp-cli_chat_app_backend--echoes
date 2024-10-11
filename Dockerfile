@@ -52,15 +52,14 @@ COPY . .
 RUN ls -la /app
 
 # Install dependencies via vcpkg
-RUN vcpkg install unixodbc
-RUN vcpkg install curl
-RUN vcpkg install nlohmann-json
-RUN vcpkg install boost
+RUN vcpkg install boost:x64-linux unixodbc curl nlohmann-json
+
+
 
 
 
 # Build  proj
-RUN mkdir build && cd build && cmake .. && make
+RUN mkdir build && cd build && cmake .. -DCMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake && make
 
 # run  app
 CMD ["./build/ECHOES_BACKEND"]
