@@ -52,9 +52,11 @@ COPY . .
 RUN ls -la /app
 
 # Install dependencies via vcpkg
-RUN vcpkg install boost:x64-linux unixodbc curl nlohmann-json
-
-
+RUN vcpkg install unixodbc
+RUN vcpkg install curl
+RUN vcpkg install nlohmann-json
+RUN vcpkg install asio
+RUN vcpkg install boost
 
 
 
