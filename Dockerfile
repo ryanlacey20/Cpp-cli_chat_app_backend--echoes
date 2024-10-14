@@ -28,10 +28,11 @@ RUN apt-get update && \
     autoconf-archive \
     libtool \
     perl && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
+    #apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Install vcpkg
-RUN git clone https://github.com/microsoft/vcpkg.git $VCPKG_ROOT && \
+
+    # Install vcpkg
+    RUN git clone https://github.com/microsoft/vcpkg.git $VCPKG_ROOT && \
     chmod +x $VCPKG_ROOT/bootstrap-vcpkg.sh && \
     cd $VCPKG_ROOT && \
     ./bootstrap-vcpkg.sh
