@@ -1,7 +1,6 @@
 build:
   docker:
     web: Dockerfile
-    worker: ./Dockerfile
 
 release:
   image: echoes-backend
