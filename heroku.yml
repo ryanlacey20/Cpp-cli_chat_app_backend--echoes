@@ -6,6 +6,4 @@ release:
   command:
     - ./build/ECHOES_BACKEND
 
-# Optionally, you can specify environment variables here
-env:
-  VCPKG_ROOT: /vcpkg
+
