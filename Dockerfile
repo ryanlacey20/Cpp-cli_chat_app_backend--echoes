@@ -10,6 +10,7 @@ RUN apt-get update && \
     apt-get install -y \
     bash \
     build-essential \
+    cmake \
     curl \
     git \
     g++ \
@@ -27,7 +28,7 @@ RUN apt-get update && \
     automake \
     autoconf-archive \
     libtool \
-    perl && \
+    perl 
     #apt-get clean && rm -rf /var/lib/apt/lists/*
 
 
