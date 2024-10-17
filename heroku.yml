@@ -3,5 +3,6 @@ build:
     web: Dockerfile
 
 release:
+  image: echoes-backend
   command:
     - ./build/ECHOES_BACKEND
