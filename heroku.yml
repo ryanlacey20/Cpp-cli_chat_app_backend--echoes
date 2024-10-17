@@ -1,9 +1,12 @@
 build:
   docker:
     web: Dockerfile
+    worker: worker/Dockerfile
 
 release:
+  image: echoes-backend
   command:
     - ./build/ECHOES_BACKEND
+
 
 
