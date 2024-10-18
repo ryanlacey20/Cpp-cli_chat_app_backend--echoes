@@ -1,11 +1,13 @@
+setup:
 build:
   docker:
     web: ./Dockerfile
 
 config:
-  REQUIREMENTS_FILENAME: heroku.
+  REQUIREMENTS_FILENAME: heroku.yml
   
 release:
   image: echoes-backend
   command:
     - ./build/ECHOES_BACKEND
+
