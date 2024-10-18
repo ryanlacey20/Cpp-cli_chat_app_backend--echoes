@@ -1,7 +1,10 @@
 build:
   docker:
-    web: Dockerfile
+    web: ./Dockerfile
 
+config:
+  REQUIREMENTS_FILENAME: heroku.
+  
 release:
   image: echoes-backend
   command:
