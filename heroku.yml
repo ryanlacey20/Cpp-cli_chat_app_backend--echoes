@@ -1,7 +1,7 @@
-setup:
-  build:
-    docker:
-      web: ./Dockerfile
+
+build:
+  docker:
+    web: ./Dockerfile
 
   config:
     REQUIREMENTS_FILENAME: heroku.yml
