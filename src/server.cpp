@@ -19,8 +19,8 @@ int startServer()
      {
          json results = dbHandler.executeQuery("SELECT * FROM messages ORDER BY created_at");
 
-         return crow::response(results.dump()); // .dump is converting to a string, not sure if we need or would be better/possible to just return a json..
-     });
+    // return crow::response(results.dump()); // .dump is converting to a string, not sure if we need or would be better/possible to just return a json..
+        return "hello"; });
 
     app.port(18080).multithreaded().run();
 

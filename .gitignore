@@ -1,3 +1,4 @@
 /tadhg-build
 /.vscode
 /build*
+docker-compose.yml

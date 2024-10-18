@@ -1,11 +1,11 @@
-cmake_minimum_required(VERSION 3.30) 
+cmake_minimum_required(VERSION 3.28.3) 
 project(ECHOES_BACKEND)
 
 # Set C++ version
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(CMAKE_TOOLCHAIN_FILE "/Users/ryanlacey/Downloads/vcpkg/scripts/buildsystems/vcpkg.cmake")
+#set(CMAKE_TOOLCHAIN_FILE "/Users/ryanlacey/Downloads/vcpkg/scripts/buildsystems/vcpkg.cmake")
 
 if(WIN32)
     set(CMAKE_TOOLCHAIN_FILE "C:/Program Files/vcpkg/scripts/buildsystems/vcpkg.cmake")

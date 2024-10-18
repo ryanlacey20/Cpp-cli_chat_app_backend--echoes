@@ -1,0 +1,16 @@
+version: '3'
+services:
+  app:
+    image: ryanlacey00/echoes-backend:latest
+    container_name: echoes_backend_container # Optional: container name
+    volumes:
+      - ./src:/app/src # Map the local src directory to /app/src inside the container
+    ports:
+      - "8080:18080" # Expose port 8080 if your app needs it (adjust if necessary)
+    environment:
+      VCPKG_ROOT: /vcpkg # Environment variables (in case needed)
+      ENV_DB_CONNECTION_STRING:
+    command: [ "./build/ECHOES_BACKEND" ] # Command to run your built application
+
+    # Optional: Restart the container automatically if it stops
+    restart: unless-stopped
