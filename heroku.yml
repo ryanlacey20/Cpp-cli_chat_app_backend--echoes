@@ -7,7 +7,7 @@ build:
     REQUIREMENTS_FILENAME: heroku.yml
     
 release:
-  image: echoes-backend
+  image: ECHOES_BACKEND
   command:
     - ./build/ECHOES_BACKEND
 
