@@ -1,13 +1,6 @@
-
 build:
   docker:
-    web: ./Dockerfile
-
-  config:
-    REQUIREMENTS_FILENAME: heroku.yml
-    
-release:
-  image: ECHOES_BACKEND
-  command:
-    - ./build/ECHOES_BACKEND
-
+    release:
+       dockerfile: Dockerfile
+       target: builder
+    web: Dockerfile
