@@ -6,8 +6,8 @@ build:
   config:
     REQUIREMENTS_FILENAME: heroku.yml
     
-  release:
-    image: echoes-backend
-    command:
-      - ./build/ECHOES_BACKEND
+release:
+  image: echoes-backend
+  command:
+    - ./build/ECHOES_BACKEND
 
