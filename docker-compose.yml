@@ -1,16 +1,22 @@
 version: '3'
 services:
-  app:
+  web:
     build:
       context: .
       dockerfile: Dockerfile
     image: ryanlacey00/echoes-backend:latest
-    volumes:
-      - ./src:/app/src  # Map the local src directory to /app/src inside the container
+    
     ports:
       - "18080:18080"    # Expose port 18080 if your app needs it (adjust if necessary)
     environment:
       VCPKG_ROOT: /vcpkg # Environment variables (in case needed)
       ENV_DB_CONNECTION_STRING: "your_connection_string_here" # Add a value here
+    develop:
+      watch:
+        - action: sync+restart
+          path: ./src
+          target: /app/src
+          
+
     command: ["/bin/sh", "-c", "cd build && cmake .. -DCMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake && make && ./ECHOES_BACKEND"] # Corrected command format
     restart: unless-stopped
