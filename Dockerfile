@@ -12,6 +12,7 @@ RUN apt-get update && \
     build-essential \
     cmake \
     curl \
+    entr \
     git \
     g++ \
     cmake \
@@ -57,5 +58,6 @@ RUN vcpkg install boost
 # Build the project
 RUN mkdir build && cd build && cmake .. -DCMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake && make
 
+EXPOSE 18080
 # Run the application
 CMD ["./build/ECHOES_BACKEND"]
