@@ -46,12 +46,45 @@ int startServer() {
     crow::SimpleApp app;
 
     CROW_ROUTE(app, "/getMessages")([&]() {
-        return crow::response(getFirebaseData("https://echoes-86d80-default-rtdb.europe-west1.firebasedatabase.app/messages.json").dump());
+        return crow::response(getFirebaseData("https://echoes-86d80-default-rtdb.europe-west1.firebasedatabase.app/messages/0.json").dump());
     });
 
     CROW_ROUTE(app, "/putMessage")([&]() {
-        const json data = {{"m3", {{"name", "ryanl"}, {"message", "hello world"}}}};
 
+            const json data = {
+                {"1", {   
+                    {"user", "Commdus"},
+                    {"message", "MEET ME AFTER THE TOGA PARTY."},
+                    {"timestamp", "2024-10-22T12:34:56Z"}
+                    }
+                },
+                {"2", {
+                    {"user", "Maximus"},
+                    {"message", "ARE YOU NOT ENTERTAINED?"},
+                    {"timestamp", "2024-10-22T12:35:00Z"}
+                    }
+                }
+        };
+
+        //  ---------- MSG JSON DATA STRUCTURE --------------
+   
+        // {
+        //         {"1", {   
+        //             {"user", "Russel"},
+        //             {"message", "MEET ME APRES TOGA PARTY!"},
+        //             {"timestamp", "2024-10-22T12:34:56Z"}
+        //             }
+        //         },
+        //         {"2", {
+        //             {"user", "Crow"},
+        //             {"message", "ARE YOU NOT ENTERTAINED?"},
+        //             {"timestamp", "2024-10-22T12:35:00Z"}
+        //             }
+        //         }
+        // };
+
+
+        
         putFirebaseData("https://echoes-86d80-default-rtdb.europe-west1.firebasedatabase.app/messages.json", data);
         return crow::response("ran, check DB");
 
