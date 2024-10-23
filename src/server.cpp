@@ -22,10 +22,9 @@ json getFirebaseData(const std::string& url) {
     curl_easy_cleanup(curl);
 
     return json::parse(readBuffer); 
-
 }
 
-int startServer(const std::string& url) {
+int startServer() {
     crow::SimpleApp app;
 
     CROW_ROUTE(app, "/getMessages")([&]() {
