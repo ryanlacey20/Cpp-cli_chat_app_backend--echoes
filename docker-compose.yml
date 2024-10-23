@@ -7,10 +7,9 @@ services:
     image: ryanlacey00/echoes-backend:latest
     
     ports:
-      - "18080:18080"    # Expose port 18080 if your app needs it (adjust if necessary)
+      - "18080:18080"    # Expose port 18080 
     environment:
-      VCPKG_ROOT: /vcpkg # Environment variables (in case needed)
-      ENV_DB_CONNECTION_STRING: "your_connection_string_here" # Add a value here
+      VCPKG_ROOT: /vcpkg # Env vars
     develop:
       watch:
         - action: sync+restart
