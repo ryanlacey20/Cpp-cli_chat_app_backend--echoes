@@ -24,11 +24,37 @@ json getFirebaseData(const std::string& url) {
     return json::parse(readBuffer); 
 }
 
+bool
+ putFirebaseData(const std::string& url, const json& data){
+    CURL* curl = curl_easy_init();
+    if (!curl) return false; 
+
+    std::string stringData = data.dump(); 
+
+    curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+    curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "PUT"); 
+    curl_easy_setopt(curl, CURLOPT_POSTFIELDS, stringData.c_str());
+    curl_easy_setopt(curl, CURLOPT_HTTPHEADER, nullptr); 
+
+    CURLcode res = curl_easy_perform(curl);
+    curl_easy_cleanup(curl); 
+
+    return res == CURLE_OK; 
+}
+
 int startServer() {
     crow::SimpleApp app;
 
     CROW_ROUTE(app, "/getMessages")([&]() {
         return crow::response(getFirebaseData("https://echoes-86d80-default-rtdb.europe-west1.firebasedatabase.app/messages.json").dump());
+    });
+
+    CROW_ROUTE(app, "/putMessage")([&]() {
+        const json data = {{"m3", {{"name", "ryanl"}, {"message", "hello world"}}}};
+
+        putFirebaseData("https://echoes-86d80-default-rtdb.europe-west1.firebasedatabase.app/messages.json", data);
+        return crow::response("ran, check DB");
+
     });
 
     app.port(18080).multithreaded().run();
