@@ -28,7 +28,7 @@ find_package(Boost REQUIRED COMPONENTS system filesystem)
 
 
 # Define the executable
-add_executable(ECHOES_BACKEND src/main.cpp src/server.cpp src/dbConnection.cpp)
+add_executable(ECHOES_BACKEND src/main.cpp src/server.cpp)
 
 target_link_libraries(ECHOES_BACKEND
     PRIVATE
@@ -39,6 +39,7 @@ target_link_libraries(ECHOES_BACKEND
     ODBC::ODBC
     nlohmann_json::nlohmann_json
 )
+
 
 # # Include directories for asio (added stand alone outside of boost)
 # target_include_directories(ECHOES_BACKEND PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/third_party/asio/include)
