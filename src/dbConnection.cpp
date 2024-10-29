@@ -16,12 +16,12 @@ Database::Database()
     env = SQL_NULL_HENV;
     dbc = SQL_NULL_HDBC;
     establishConnection();
-    std::cout << "DB INSTANCE CREATED \n";
+    std::cout << "DB INSTANCE CREATED \n" << std::endl;
 }
 
 Database::~Database()
 {
-    std::cout << "DB INSTANCE DESTROYED \n";
+    std::cout << "DB INSTANCE DESTROYED \n" << std::endl;
     closeConnection();
 }
 

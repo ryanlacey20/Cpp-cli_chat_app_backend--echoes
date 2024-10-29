@@ -81,9 +81,11 @@ int startServer() {
     });
 
     CROW_ROUTE(app, "/getTodaysMessages")([&]() {
-
         std::string todaysMessagesDBEndpointURL = parseTodaysDBURL();
-        return crow::response(getFirebaseData(todaysMessagesDBEndpointURL).dump());
+        std::optional<std::string> todaysMessages = getFirebaseData(todaysMessagesDBEndpointURL).dump()
+        if(getFirebaseData(todaysMessagesDBEndpointURL).dump())
+        
+        return crow::response("placeholder");
 
     });
 
