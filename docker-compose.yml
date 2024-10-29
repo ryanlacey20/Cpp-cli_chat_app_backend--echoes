@@ -15,7 +15,9 @@ services:
         - action: sync+restart
           path: ./src
           target: /app/src
-          
+        - action: sync+restart
+          path: ./CMakeLists.txt
+          target: /apps
 
     command: ["/bin/sh", "-c", "cd build && cmake .. -DCMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake && make && ./ECHOES_BACKEND"] # Corrected command format
     restart: unless-stopped
