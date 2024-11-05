@@ -23,8 +23,6 @@ RUN apt-get update && \
     unzip \
     zip \
     python3 \
-    unixodbc \
-    unixodbc-dev \
     autoconf \
     automake \
     autoconf-archive \
@@ -49,7 +47,6 @@ COPY . .
 RUN ls -la /app
 
 # Install dependencies via vcpkg
-RUN vcpkg install unixodbc
 RUN vcpkg install curl
 RUN vcpkg install nlohmann-json
 RUN vcpkg install asio
@@ -58,6 +55,6 @@ RUN vcpkg install boost
 # Build the project
 RUN mkdir build && cd build && cmake .. -DCMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake && make
 
-EXPOSE 18080
+EXPOSE 4729
 # Run the application
 CMD ["./build/ECHOES_BACKEND"]

@@ -7,7 +7,7 @@ services:
     image: ryanlacey00/echoes-backend:latest
     
     ports:
-      - "18080:18080"    # Expose port 18080 
+      - "127.0.0.1:4729:4729"
     environment:
       VCPKG_ROOT: /vcpkg # Env vars
     develop:

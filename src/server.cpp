@@ -3,6 +3,8 @@
 #include "crow_all.h"
 #include <nlohmann/json.hpp>
 #include <chrono>
+#include "ChatMessage.h"
+
 
 
 
@@ -76,15 +78,14 @@ int startServer() {
     crow::SimpleApp app;
 
     CROW_ROUTE(app, "/testDev")([&]() {
-        std::cout << __cplusplus << std::endl;
-        return crow::response(getCurrentDate());
+
+        // ChatMessage testMessage("Ryan", "Helloo world", 123456);
+
+        return crow::response("debug return");
     });
 
     CROW_ROUTE(app, "/getTodaysMessages")([&]() {
         std::string todaysMessagesDBEndpointURL = parseTodaysDBURL();
-        std::optional<std::string> todaysMessages = getFirebaseData(todaysMessagesDBEndpointURL).dump()
-        if(getFirebaseData(todaysMessagesDBEndpointURL).dump())
-        
         return crow::response("placeholder");
 
     });
@@ -92,8 +93,11 @@ int startServer() {
 // left off here, succesfully reads data from body of request
 // TODO: get MD of messages to find what the Id of this message will be or else find a way to auto index the data added to the DB, the latter would be preferable
 
-    CROW_ROUTE(app, "/putMessage").methods("PUT"_method)([](const crow::request& req) {
-        auto jsonData = json::parse(req.body);
+    CROW_ROUTE(app, "/putMessage").methods("POST"_method)([](const crow::request& req) {
+        
+        // json msgData = json::parse(req.body);
+        // std::cout << msgData << std::endl;
+        // auto jsonData = json::parse(req.body);
 
 //  -----DEV WORK-----
 //  ---------- MSG JSON DATA STRUCTURE --------------
@@ -134,10 +138,13 @@ int startServer() {
         //debugResetFirbaseDB(data);
         std::string todaysMessagesDBEndpointURL = parseTodaysDBURL();
         // putFirebaseData(todaysMessagesDBEndpointURL, msgData);
-        return crow::response(jsonData.dump());
+        return crow::response("msgData");
 
     });
-
-    app.port(18080).multithreaded().run();
+    
+    const char* ip_address = "0.0.0.0"; 
+    const int port = 4729;
+    
+    app.bindaddr(ip_address).port(port).multithreaded().run();
     return 0;
 }

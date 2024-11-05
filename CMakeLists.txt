@@ -19,7 +19,7 @@ endif()
 
 
 find_package(CURL REQUIRED)
-find_package(ODBC REQUIRED)
+# find_package(ODBC REQUIRED)
 find_package(nlohmann_json REQUIRED)
 
 
@@ -28,7 +28,7 @@ find_package(Boost REQUIRED COMPONENTS system filesystem)
 
 
 # Define the executable
-add_executable(ECHOES_BACKEND src/main.cpp src/server.cpp)
+add_executable(ECHOES_BACKEND src/main.cpp src/server.cpp src/ChatMessage.cpp src/Thread.cpp)
 
 target_link_libraries(ECHOES_BACKEND
     PRIVATE
@@ -36,7 +36,7 @@ target_link_libraries(ECHOES_BACKEND
     Boost::filesystem
     #Boost::beast
     CURL::libcurl
-    ODBC::ODBC
+    # ODBC::ODBC
     nlohmann_json::nlohmann_json
 )
 
